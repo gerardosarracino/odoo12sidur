@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-from . import Generales
+from . import Generales, Firmas_logos, Contratistas
