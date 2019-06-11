@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+        <!--  Formulario de Parámetros      -->
+        <record id="generales_parametros_form_view" model="ir.ui.view">
+            <field name="name">Generales Parametros Form</field>
+            <field name="model">generales.parametros</field>
+            <field name="arch" type="xml">
+                <form string="parametros form">
+                    <sheet>
+                        <group>
+                            <field name="lema"/>
+                            <field name="iva"/>
+                            <field name="retencion"/>
+                            <field name="periodicidad_retencion"/>
+                            <field name="sancion"/>
+                            <field name="periodicidad_sancion"/>
+                            <field name="estado"/>
+                            <field name="lugar_licitacion"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <!--  vista tree      -->
+        <record id="generales_parametros_tree_view" model="ir.ui.view">
+            <field name="name">Generales Parametros Tree</field>
+            <field name="model">generales.parametros</field>
+            <field name="arch" type="xml">
+                <tree string="parametros tree">
+                    <field name="lema"/>
+                    <field name="iva"/>
+                    <field name="retencion"/>
+                    <field name="periodicidad_retencion"/>
+                    <field name="sancion"/>
+                    <field name="periodicidad_sancion"/>
+                    <field name="estado"/>
+                    <field name="lugar_licitacion"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--  action view      -->
+        <record id="action_generales_parametros" model="ir.actions.act_window">
+            <field name="name">Parámetros</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">generales.parametros</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Crear Nuevos parametros
+              </p>
+            </field>
+        </record>
+        <menuitem id="generales_parametros" parent="generales" name="Parámetros" action="action_generales_parametros" sequence="1"/>
+  </data>
+</odoo>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+        <!--  Formulario de etapas de pago     -->
+        <record id="generales_etapas_pago_form_view" model="ir.ui.view">
+            <field name="name">Generales Tipo_obra Form</field>
+            <field name="model">generales.etapas_pago</field>
+            <field name="arch" type="xml">
+                <form string="etapas de pago form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="etapa"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <!--  vista tree      -->
+        <record id="generales_etapas_pago_tree_view" model="ir.ui.view">
+            <field name="name">Generales Etapas de Pago Tree</field>
+            <field name="model">generales.etapas_pago</field>
+            <field name="arch" type="xml">
+                <tree string="etapas_pago tree">
+                    <field name="name"/>
+                    <field name="etapa"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--  action view      -->
+        <record id="action_generales_etapas_pago" model="ir.actions.act_window">
+            <field name="name">Etapas de pagos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">generales.etapas_pago</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Crear Nuevos tipo de obra
+              </p>
+            </field>
+        </record>
+        <menuitem id="generales_etapas_pago" parent="generales" name="Etapas de pagos" action="action_generales_etapas_pago" sequence="1"/>
+  </data>
+</odoo>

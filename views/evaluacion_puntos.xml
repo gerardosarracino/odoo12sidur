@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+        <!--  Formulario de evaluacion por puntos     -->
+        <record id="generales_evaluacion_form_view" model="ir.ui.view">
+            <field name="name">Generales Evaluacion Form</field>
+            <field name="model">generales.evaluacion</field>
+            <field name="arch" type="xml">
+                <form string="evaluacion form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="clave"/>
+                            <field name="sub_rubro"/>
+                            <field name="solicitado"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <!--  vista tree      -->
+        <record id="generales_evaluacion_tree_view" model="ir.ui.view">
+            <field name="name">Generales Evaluacion tipo_obra Tree</field>
+            <field name="model">generales.evaluacion</field>
+            <field name="arch" type="xml">
+                <tree string="evaluacion tree">
+                    <field name="name"/>
+                    <field name="clave"/>
+                    <field name="sub_rubro"/>
+                    <field name="solicitado"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--  action view      -->
+        <record id="action_generales_evaluacion" model="ir.actions.act_window">
+            <field name="name">Mecanismo de evaluación por puntos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">generales.evaluacion</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Agregar SubRublo
+              </p>
+            </field>
+        </record>
+        <menuitem id="generales_evaluacion" parent="generales" name="Evaluación por puntos" action="action_generales_evaluacion" sequence="1"/>
+  </data>
+</odoo>

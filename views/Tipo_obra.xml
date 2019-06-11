@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+        <!--  Formulario de tipo de obra      -->
+        <record id="generales_tipo_obra_form_view" model="ir.ui.view">
+            <field name="name">Generales Tipo_obra Form</field>
+            <field name="model">generales.tipo_obra</field>
+            <field name="arch" type="xml">
+                <form string="tipo_obra form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <!--  vista tree      -->
+        <record id="generales_tipo_obra_tree_view" model="ir.ui.view">
+            <field name="name">Generales tipo_obra Tree</field>
+            <field name="model">generales.tipo_obra</field>
+            <field name="arch" type="xml">
+                <tree string="tipo_obra tree">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--  action view      -->
+        <record id="action_generales_tipo_obra" model="ir.actions.act_window">
+            <field name="name">Tipo de obra</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">generales.tipo_obra</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Crear Nuevos tipo de obra
+              </p>
+            </field>
+        </record>
+        <menuitem id="generales_tipo_obra" parent="generales" name="Tipo de obra" action="action_generales_tipo_obra" sequence="1"/>
+  </data>
+</odoo>

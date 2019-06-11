@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_generales_origenes_obra,generales.origenes_obra,model_generales_origenes_obra,,1,1,1,1
+access_generales_tipo_obra,generales.tipo_obra,model_generales_tipo_obra,,1,1,1,1
+access_generales_municipios,generales.municipios,model_generales_municipios,,1,1,1,1
+access_generales_programas_inversion,generales.programas_inversion,model_generales_programas_inversion,,1,1,1,1
+access_generales_modalidades,generales.modalidades,model_generales_modalidades,,1,1,1,1
+access_generales_parametros,generales.parametros,model_generales_parametros,,1,1,1,1
+access_generales_deducciones,generales.deducciones,model_generales_deducciones,,1,1,1,1
+access_generales_evaluacion,generales.evaluacion,model_generales_evaluacion,,1,1,1,1
+access_generales_apartados_proyectos,generales.apartados_proyectos,model_generales_apartados_proyectos,,1,1,1,1
+access_generales_etapas_pago,generales.etapas_pago,model_generales_etapas_pago,,1,1,1,1

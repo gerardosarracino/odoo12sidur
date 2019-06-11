@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+        <!--  Formulario de deducciones      -->
+        <record id="generales_deducciones_form_view" model="ir.ui.view">
+            <field name="name">Generales Deducciones Form</field>
+            <field name="model">generales.deducciones</field>
+            <field name="arch" type="xml">
+                <form string="deducciones form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="porcentaje"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <!--  vista tree      -->
+        <record id="generales_deducciones_tree_view" model="ir.ui.view">
+            <field name="name">Generales Deducciones Tree</field>
+            <field name="model">generales.deducciones</field>
+            <field name="arch" type="xml">
+                <tree string="deducciones tree">
+                    <field name="name"/>
+                    <field name="porcentaje"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--  action view      -->
+        <record id="action_generales_deducciones" model="ir.actions.act_window">
+            <field name="name">Deducciones</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">generales.deducciones</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Agregar Deducciones:
+              </p>
+            </field>
+        </record>
+        <menuitem id="generales_deducciones" parent="generales" name="Deducciones" action="action_generales_deducciones" sequence="1"/>
+  </data>
+</odoo>

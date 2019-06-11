@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+        <!--  Formulario de apartados de proyecctos      -->
+        <record id="generales_apartados_proyectos_form_view" model="ir.ui.view">
+            <field name="name">Generales Apartados de Proyectos Form</field>
+            <field name="model">generales.apartados_proyectos</field>
+            <field name="arch" type="xml">
+                <form string="apartados de proyectos form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <!--  vista tree      -->
+        <record id="generales_apartados_proyectos_tree_view" model="ir.ui.view">
+            <field name="name">Generales Apartados de Proyectos Tree</field>
+            <field name="model">generales.apartados_proyectos</field>
+            <field name="arch" type="xml">
+                <tree string="apartados de proyectos tree">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--  action view      -->
+        <record id="action_generales_apartados_proyectos" model="ir.actions.act_window">
+            <field name="name">Apartados del proyecto</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">generales.apartados_proyectos</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Crear Nuevos Apartados del proyecto
+              </p>
+            </field>
+        </record>
+        <menuitem id="generales_apartados_proyectos" parent="generales" name="Apartados del proyecto" action="action_generales_apartados_proyectos" sequence="1"/>
+  </data>
+</odoo>
