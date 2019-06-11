@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from odoo import models, fields
 
 
 class OrigenesObra(models.Model):
@@ -46,7 +46,7 @@ class Municipios(models.Model):
                   ('SNL', "San Luis Potosi"),
                   ('SIN', "Sinaloa"),
                   ('SONORA', "Sonora"),
-                  ('TBC',"Tabasco"),
+                  ('TBC', "Tabasco"),
                   ('TMP', "Tamaulipas"),
                   ('TXL', "Tlaxcala"),
                   ('VER', "Veracruz"),
