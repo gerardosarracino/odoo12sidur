@@ -80,7 +80,7 @@ class ResponsableLicitaciones(models.Model):
     puesto = fields.Char(string="Puesto:", required=True)
 
 
-class NewModule(models.Model):
+class FirmasContratos(models.Model):
     _name = 'firmas_logos.firmas_contratos'
 
     name = fields.Char(string="Nombre testigo uno:", required=True)

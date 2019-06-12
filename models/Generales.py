@@ -6,75 +6,52 @@ from odoo import models, fields
 class OrigenesObra(models.Model):
     _name = 'generales.origenes_obra'
 
-    name = fields.Char(string="Nombre", required=True)
-    observaciones = fields.Text(string="Observaciones", required=True)
+    name = fields.Char(string="Nombre:", required=True)
+    observaciones = fields.Text(string="Observaciones:", required=True)
 
 
 class TipoObra(models.Model):
     _name = 'generales.tipo_obra'
 
-    name = fields.Char(string="Nombre", required=True)
+    name = fields.Char(string="Nombre:", required=True)
 
 
 class Municipios(models.Model):
     _name = 'generales.municipios'
 
-    estados = [
-                  ('AGC', "Aguascalientes"),
-                  ('BCN', "Baja California Norte"),
-                  ('BCS', "Baja California Sur"),
-                  ('CAMP', "Campeche"),
-                  ('CHI', "Chiapas"),
-                  ('CHIH', "Chihuahua"),
-                  ('COA', "Coahuila"),
-                  ('COL', "Colima"),
-                  ('DF', "Distrito Federal"),
-                  ('DUR', "Durango"),
-                  ('EM', "Estado de Mexico"),
-                  ('GTO', "Guanajuato"),
-                  ('GRO', "Guerrero"),
-                  ('HDO', "Hidalgo"),
-                  ('JCO', "Jalisco"),
-                  ('MCH', "Michoacan"),
-                  ('MRO', "Morelos"),
-                  ('NR', "Nayarit"),
-                  ('NLN', "Nuevo Leon"),
-                  ('OXC', "Oaxaca"),
-                  ('PUE', "Puebla"),
-                  ('QRT', "Queretaro"),
-                  ('QTR', "Quintana Roo"),
-                  ('SNL', "San Luis Potosi"),
-                  ('SIN', "Sinaloa"),
-                  ('SONORA', "Sonora"),
-                  ('TBC', "Tabasco"),
-                  ('TMP', "Tamaulipas"),
-                  ('TXL', "Tlaxcala"),
-                  ('VER', "Veracruz"),
-                  ('YCT', "Yucatan"),
-                  ('ZAC', "Zacatecas")
-                  ]
-    # falta relacion One2many de entidad_federativa duda
+    estados = [('AGC', "Aguascalientes"), ('BCN', "Baja California Norte"), ('BCS', "Baja California Sur"),
+               ('CAMP', "Campeche"), ('CHI', "Chiapas"), ('CHIH', "Chihuahua"), ('COA', "Coahuila"), ('COL', "Colima"),
+               ('DF', "Distrito Federal"), ('DUR', "Durango"), ('EM', "Estado de Mexico"), ('GTO', "Guanajuato"),
+               ('GRO', "Guerrero"), ('HDO', "Hidalgo"), ('JCO', "Jalisco"), ('MCH', "Michoacan"), ('MRO', "Morelos"),
+               ('NR', "Nayarit"), ('NLN', "Nuevo Leon"), ('OXC', "Oaxaca"), ('PUE', "Puebla"), ('QRT', "Queretaro"),
+               ('QTR', "Quintana Roo"), ('SNL', "San Luis Potosi"), ('SIN', "Sinaloa"), ('SONORA', "Sonora"),
+               ('TBC', "Tabasco"), ('TMP', "Tamaulipas"), ('TXL', "Tlaxcala"), ('VER', "Veracruz"), ('YCT', "Yucatan"),
+               ('ZAC', "Zacatecas")]
+    # relacion hacia contratista, pero no se puede verificar funcionamiento hasta tener la vista de contratista pendient
+    # name = fields.One2many(comodel_name="contratista.datos", inverse_name="estado_entidad",
+    #                        string="Entidad Federativa: ",
+    #                        default="SNR", required=True)
     name = fields.Selection(estados, string="Entidad Federativa: ", default="SONORA", required=True)
-    municipio_delegacion = fields.Char(string="Municipio/Delegacion: ", required=True)
-    clave_municipio = fields.Integer(string="Clave municipio/Delegacion: ", required=True)
+    municipio_delegacion = fields.Char(string="Municipio/Delegación: ", required=True)
+    clave_municipio = fields.Integer(string="Clave municipio/Delegación: ", required=True)
 
 
 class ProgramasInversion(models.Model):
     _name = 'generales.programas_inversion'
 
-    # falta relacion One2many de Nombre
+    # inherit = 'platillas.plantilla'
+    # Relacion teoricamente hecha hacia el modulo plantillas
+    # name = fields.One2many(comodel_name="platillas.plantilla", inverse_name="programa", string="Nombre:")
     name = fields.Char(string="Nombre:", required=True)
-
     clave = fields.Char(string="Clave:", required=True)
-    select = [('FEDERAL', 'FEDERAL'), ('ESTATAL', 'ESTATAL')]
-    normatividad = fields.Selection(select, string="Normatividad:", required=True, default="FEDERAL")
+    select = [('federal', 'FEDERAL'), ('estatal', 'ESTATAL')]
+    normatividad = fields.Selection(select, string="Normatividad:", required=True, default="federal")
 
 
 class Modalidades(models.Model):
     _name = 'generales.modalidades'
-    # relaciones falta
-    name = fields.Many2one('generales.programas_inversion', 'Programas de inversion:', ondelete="cascade"
-                                          , required=True)
+    name = fields.Many2one('generales.programas_inversion', 'Programas de inversión:', ondelete="cascade"
+                           , required=True)
     categoria_programatica = fields.Text(string="Categoría Programática:", required=True)
 
 
@@ -85,11 +62,11 @@ class Parametros(models.Model):
                                                                       "SOCIAL SUPREMO DE LOS MEXICANOS")
     iva = fields.Float(string="% IVA", required=True, default="16")
     retencion = fields.Float(string="% Retención:", required=True, default="2")
-    select = [('DIARIO', 'DIARIO'), ('MENSUAL', 'MENSUAL')]
+    select = [('diario', 'DIARIO'), ('mensual', 'MENSUAL')]
     periodicidad_retencion = fields.Selection(select, string="Periodicidad Retención:", required=True,
-                                              default="MENSUAL")
+                                              default="mensual")
     sancion = fields.Float(string="% Sanción:", required=True, default="3")
-    periodicidad_sancion = fields.Selection(select, string="Periodicidad Sanción:", default="MENSUAL")
+    periodicidad_sancion = fields.Selection(select, string="Periodicidad Sanción:", default="mensual")
     estado = fields.Many2one('generales.municipios', 'Estado:', required=True)
     lugar_licitacion = fields.Text(string="Lugar Actos Licitación:", required=True, default="SALA DE JUNTAS")
 
@@ -97,7 +74,7 @@ class Parametros(models.Model):
 class Deducciones(models.Model):
     _name = 'generales.deducciones'
 
-    name = fields.Char(string="Deduccion:", required=True)
+    name = fields.Char(string="Deducción:", required=True)
     porcentaje = fields.Float(string="Porcentaje:", required=True)
 
 
