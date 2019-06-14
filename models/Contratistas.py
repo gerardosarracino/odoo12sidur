@@ -3,6 +3,14 @@
 from odoo import models, fields
 
 
+class TipoContratista(models.Model):
+    _name = 'contratista.tipo_contratista'
+
+    persona_moral = fields.Boolean(string="Persona Moral:", required=True)
+    persona_fisica = fields.Boolean(string="Persona Física:", required=True)
+    activo = fields.Boolean(string="Activo:", required=True)
+
+
 class Datos(models.Model):
     _name = 'contratistas.datos'
 
@@ -29,14 +37,6 @@ class Datos(models.Model):
     correo = fields.Char(string="Correo:", required=True)
     registro_concursante = fields.Char(string="Registro de Concursante:", required=True)
     objeto_social = fields.Text(string="Objeto Social:", required=True)
-
-
-class TipoContratista(models.Model):
-    _name = 'contratista.tipo_contratista'
-
-    persona_moral = fields.Boolean(string="Persona Moral:", required=True)
-    persona_fisica = fields.Boolean(string="Persona Física:", required=True)
-    activo = fields.Boolean(string="Activo:", required=True)
 
 
 class RepresentanteLegal(models.Model):
