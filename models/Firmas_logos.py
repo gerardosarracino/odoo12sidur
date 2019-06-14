@@ -6,7 +6,8 @@ from odoo import models, fields, api
 class Municipio(models.Model):
     _name = 'firmas_logos.municipio'
 
-    select = [('SIDUR', 'SIDUR')]
+    select = [('sidur', 'SIDUR')]
+    # sidur no es un municipio, pero asi aparece en el cronograma y en sidur, verificar verdadero nombre del campo
     name = fields.Selection(select, string="Municipio:", required=True)
 
 
@@ -14,7 +15,8 @@ class DependenciaInstitucion(models.Model):
     _name = 'firmas_logos.dependencia_institucion'
 
     name = fields.Char(string="Nombre:", required=True)
-    # logo = fields.Binary("Image", help="Logo a utilizar")
+    image = fields.Binary("Image", help="This field holds the image used as avatar for ")
+    # in xml, <field name="image" widget='image' class="oe_avatar"/>
     declaraciones_dependencia = fields.Text(string="Declaraciones Dependencia:", required=True)
     titular = fields.Char(string="Titular:", required=True)
     domicilio = fields.Text(string="Domicilio:", required=True)
@@ -26,7 +28,6 @@ class Titular(models.Model):
     name = fields.Char(string="Nombre:", required=True)
     puesto = fields.Char(string="Puesto:", required=True)
     fecha_nombramiento = fields.Date(string="Fecha de Nombramiento:", required=True)
-
 # contraloria interna no aparece en el cronograma de actividades pero en sidur si, PENDIENTE
 
 

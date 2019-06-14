@@ -3,16 +3,8 @@
 from odoo import models, fields
 
 
-class TipoContratista(models.Model):
-    _name = 'contratista.tipo_contratista'
-
-    persona_moral = fields.Boolean(string="Persona Moral:", required=True)
-    persona_fisica = fields.Boolean(string="Persona Física:", required=True)
-    activo = fields.Boolean(string="Activo:", required=True)
-
-
 class Datos(models.Model):
-    _name = 'contratista.datos'
+    _name = 'contratistas.datos'
 
     name = fields.Char(string="Nombre/Razón social:")
     rfc = fields.Char(string="RFC:", required=True)
@@ -24,14 +16,27 @@ class Datos(models.Model):
     colonia = fields.Char(string="Colonia:", required=True)
     cp = fields.Char(string="C.P.:", required=True)
     municipio_delegacion = fields.Char(string="Municipio/Delegación:", required=True)
-    # relacion hecha hacia generales.municipios, pero sin vista no se puede verificar funcionamiento, pendiente
-    # estado_entidad = fields.Many2one(comodel_name="generales.municipios", string="Estado/Entidad:",
-    #                                  required=True)
-    estado_entidad = fields.Char(string="Estado/Entidad:", required=True)
+    estados = [('AGC', "Aguascalientes"), ('BCN', "Baja California Norte"), ('BCS', "Baja California Sur"),
+               ('CAMP', "Campeche"), ('CHI', "Chiapas"), ('CHIH', "Chihuahua"), ('COA', "Coahuila"), ('COL', "Colima"),
+               ('DF', "Distrito Federal"), ('DUR', "Durango"), ('EM', "Estado de Mexico"), ('GTO', "Guanajuato"),
+               ('GRO', "Guerrero"), ('HDO', "Hidalgo"), ('JCO', "Jalisco"), ('MCH', "Michoacan"), ('MRO', "Morelos"),
+               ('NR', "Nayarit"), ('NLN', "Nuevo Leon"), ('OXC', "Oaxaca"), ('PUE', "Puebla"), ('QRT', "Queretaro"),
+               ('QTR', "Quintana Roo"), ('SNL', "San Luis Potosi"), ('SIN', "Sinaloa"), ('SONORA', "Sonora"),
+               ('TBC', "Tabasco"), ('TMP', "Tamaulipas"), ('TXL', "Tlaxcala"), ('VER', "Veracruz"), ('YCT', "Yucatan"),
+               ('ZAC', "Zacatecas")]
+    estado_entidad = fields.Selection(estados, string="Estado/Entidad", required=True)
     telefono = fields.Char(string="Teléfonos:", required=True)
     correo = fields.Char(string="Correo:", required=True)
     registro_concursante = fields.Char(string="Registro de Concursante:", required=True)
     objeto_social = fields.Text(string="Objeto Social:", required=True)
+
+
+class TipoContratista(models.Model):
+    _name = 'contratista.tipo_contratista'
+
+    persona_moral = fields.Boolean(string="Persona Moral:", required=True)
+    persona_fisica = fields.Boolean(string="Persona Física:", required=True)
+    activo = fields.Boolean(string="Activo:", required=True)
 
 
 class RepresentanteLegal(models.Model):

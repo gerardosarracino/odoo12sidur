@@ -18,6 +18,7 @@ class TipoObra(models.Model):
 
 class Municipios(models.Model):
     _name = 'generales.municipios'
+    _rec_name = 'name'
 
     estados = [('AGC', "Aguascalientes"), ('BCN', "Baja California Norte"), ('BCS', "Baja California Sur"),
                ('CAMP', "Campeche"), ('CHI', "Chiapas"), ('CHIH', "Chihuahua"), ('COA', "Coahuila"), ('COL', "Colima"),
@@ -27,11 +28,7 @@ class Municipios(models.Model):
                ('QTR', "Quintana Roo"), ('SNL', "San Luis Potosi"), ('SIN', "Sinaloa"), ('SONORA', "Sonora"),
                ('TBC', "Tabasco"), ('TMP', "Tamaulipas"), ('TXL', "Tlaxcala"), ('VER', "Veracruz"), ('YCT', "Yucatan"),
                ('ZAC', "Zacatecas")]
-    # relacion hacia contratista, pero no se puede verificar funcionamiento hasta tener la vista de contratista pendient
-    # name = fields.One2many(comodel_name="contratista.datos", inverse_name="estado_entidad",
-    #                        string="Entidad Federativa: ",
-    #                        default="SNR", required=True)
-    name = fields.Selection(estados, string="Entidad Federativa: ", default="SONORA", required=True)
+    name = fields.Selection(estados, string="Entidad Federativa: ", required=True)
     municipio_delegacion = fields.Char(string="Municipio/Delegación: ", required=True)
     clave_municipio = fields.Integer(string="Clave municipio/Delegación: ", required=True)
 
@@ -39,10 +36,7 @@ class Municipios(models.Model):
 class ProgramasInversion(models.Model):
     _name = 'generales.programas_inversion'
 
-    # inherit = 'platillas.plantilla'
-    # Relacion teoricamente hecha hacia el modulo plantillas
-    # name = fields.One2many(comodel_name="platillas.plantilla", inverse_name="programa", string="Nombre:")
-    name = fields.Char(string="Nombre:", required=True)
+    name = fields.Char(string="nombre", required=True)
     clave = fields.Char(string="Clave:", required=True)
     select = [('federal', 'FEDERAL'), ('estatal', 'ESTATAL')]
     normatividad = fields.Selection(select, string="Normatividad:", required=True, default="federal")
@@ -50,8 +44,9 @@ class ProgramasInversion(models.Model):
 
 class Modalidades(models.Model):
     _name = 'generales.modalidades'
-    name = fields.Many2one('generales.programas_inversion', 'Programas de inversión:', ondelete="cascade"
-                           , required=True)
+
+    name = fields.Many2one('generales.programas_inversion', inverse_name="name", string="Programas de inversión:",
+                           required=True)
     categoria_programatica = fields.Text(string="Categoría Programática:", required=True)
 
 
@@ -67,7 +62,9 @@ class Parametros(models.Model):
                                               default="mensual")
     sancion = fields.Float(string="% Sanción:", required=True, default="3")
     periodicidad_sancion = fields.Selection(select, string="Periodicidad Sanción:", default="mensual")
-    estado = fields.Many2one('generales.municipios', 'Estado:', required=True)
+
+    estado = fields.Many2one('generales.municipios', string="Estado:", required=True)
+
     lugar_licitacion = fields.Text(string="Lugar Actos Licitación:", required=True, default="SALA DE JUNTAS")
 
 

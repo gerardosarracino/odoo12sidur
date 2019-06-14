@@ -25,7 +25,7 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/Generales/Generales.xml',
+        'views/Generales.xml',
         'views/Tipo_obra.xml',
         'views/municipios.xml',
         'views/programas_inversion.xml',
