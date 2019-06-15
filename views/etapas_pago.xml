@@ -41,6 +41,7 @@
               </p>
             </field>
         </record>
-        <menuitem id="generales_etapas_pago" parent="generales" name="Etapas de pagos" action="action_generales_etapas_pago" sequence="1"/>
+        <menuitem id="generales_etapas_pago" parent="generales" name="Etapas de pagos"
+                  action="action_generales_etapas_pago" sequence="11"/>
   </data>
 </odoo>

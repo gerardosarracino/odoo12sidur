@@ -42,7 +42,7 @@
             </field>
         </record>
         <!-- crear menus       -->
-        <menuitem id="generales_root" name="Generales" sequence="0"/>
+        <menuitem id="generales_root" name="Información Básica" sequence="0"/>
         <menuitem id="generales" name="Generales" sequence="1" parent="generales_root"/>
         <menuitem id="generales_origenes_obra" parent="generales" name="Origenes de obra" action="action_generales_origenes_obra" sequence="1"/>
   </data>

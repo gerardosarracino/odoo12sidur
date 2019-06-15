@@ -45,6 +45,7 @@
               </p>
             </field>
         </record>
-        <menuitem id="generales_evaluacion" parent="generales" name="Evaluación por puntos" action="action_generales_evaluacion" sequence="1"/>
+        <menuitem id="generales_evaluacion" parent="generales" name="Evaluación por puntos"
+                  action="action_generales_evaluacion" sequence="9"/>
   </data>
 </odoo>

@@ -53,6 +53,7 @@
               </p>
             </field>
         </record>
-        <menuitem id="generales_parametros" parent="generales" name="Parámetros" action="action_generales_parametros" sequence="1"/>
+        <menuitem id="generales_parametros" parent="generales" name="Parámetros" action="action_generales_parametros"
+                  sequence="7"/>
   </data>
 </odoo>

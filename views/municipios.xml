@@ -43,6 +43,7 @@
               </p>
             </field>
         </record>
-        <menuitem id="generales_municipios" parent="generales" name="Municipios" action="action_generales_municipios" sequence="1"/>
+        <menuitem id="generales_municipios" parent="generales" name="Municipios" action="action_generales_municipios"
+                  sequence="4"/>
   </data>
 </odoo>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+     <!--  Formulario de origenes de obra     -->
+        <record id="generales_estado_form_view" model="ir.ui.view">
+            <field name="name">Generales estado Form</field>
+            <field name="model">generales.estado</field>
+            <field name="arch" type="xml">
+                <form string="estado form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <!--  vista tree      -->
+        <record id="generales_estado_tree_view" model="ir.ui.view">
+            <field name="name">Generales estado Tree</field>
+            <field name="model">generales.estado</field>
+            <field name="arch" type="xml">
+                <tree string="estado tree">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--  action view      -->
+        <record id="action_generales_estado" model="ir.actions.act_window">
+            <field name="name">Orígenes de Obra</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">generales.estado</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Crear nuevo Estado
+              </p>
+            </field>
+        </record>
+        <!-- crear menus       -->
+        <menuitem id="generales_estado" parent="generales" name="Estados" action="action_generales_estado" sequence="3"/>
+  </data>
+</odoo>

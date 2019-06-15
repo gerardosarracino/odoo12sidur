@@ -34,7 +34,8 @@
         'views/deducciones.xml',
         'views/evaluacion_puntos.xml',
         'views/apartados_proyecto.xml',
-        'views/etapas_pago.xml'
+        'views/etapas_pago.xml',
+        'views/estados.xml'
     ],
 
     'installable': True,

@@ -9,3 +9,4 @@ access_generales_deducciones,generales.deducciones,model_generales_deducciones,,
 access_generales_evaluacion,generales.evaluacion,model_generales_evaluacion,,1,1,1,1
 access_generales_apartados_proyectos,generales.apartados_proyectos,model_generales_apartados_proyectos,,1,1,1,1
 access_generales_etapas_pago,generales.etapas_pago,model_generales_etapas_pago,,1,1,1,1
+access_generales_estado,generales.estado,model_generales_estado,,1,1,1,1

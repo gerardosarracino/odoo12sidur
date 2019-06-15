@@ -41,6 +41,7 @@
               </p>
             </field>
         </record>
-        <menuitem id="generales_modalidades" parent="generales" name="Modalidades" action="action_generales_modalidades" sequence="1"/>
+        <menuitem id="generales_modalidades" parent="generales" name="Modalidades" action="action_generales_modalidades"
+                  sequence="6"/>
   </data>
 </odoo>

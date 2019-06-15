@@ -41,6 +41,7 @@
               </p>
             </field>
         </record>
-        <menuitem id="generales_deducciones" parent="generales" name="Deducciones" action="action_generales_deducciones" sequence="1"/>
+        <menuitem id="generales_deducciones" parent="generales" name="Deducciones" action="action_generales_deducciones"
+                  sequence="8"/>
   </data>
 </odoo>

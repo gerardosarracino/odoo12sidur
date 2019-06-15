@@ -39,6 +39,7 @@
               </p>
             </field>
         </record>
-        <menuitem id="generales_tipo_obra" parent="generales" name="Tipo de obra" action="action_generales_tipo_obra" sequence="1"/>
+        <menuitem id="generales_tipo_obra" parent="generales" name="Tipo de obra" action="action_generales_tipo_obra"
+                  sequence="2"/>
   </data>
 </odoo>

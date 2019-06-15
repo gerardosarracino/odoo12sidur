@@ -16,19 +16,18 @@ class TipoObra(models.Model):
     name = fields.Char(string="Nombre:", required=True)
 
 
+class Estados(models.Model):
+    _name = 'generales.estado'
+
+    name = fields.Char(string="Estado", required=True)
+    municipios = fields.One2many("generales.municipios", "name")
+    generales = fields.One2many("generales.parametros", "estado")
+
+
 class Municipios(models.Model):
     _name = 'generales.municipios'
-    _rec_name = 'name'
 
-    estados = [('AGC', "Aguascalientes"), ('BCN', "Baja California Norte"), ('BCS', "Baja California Sur"),
-               ('CAMP', "Campeche"), ('CHI', "Chiapas"), ('CHIH', "Chihuahua"), ('COA', "Coahuila"), ('COL', "Colima"),
-               ('DF', "Distrito Federal"), ('DUR', "Durango"), ('EM', "Estado de Mexico"), ('GTO', "Guanajuato"),
-               ('GRO', "Guerrero"), ('HDO', "Hidalgo"), ('JCO', "Jalisco"), ('MCH', "Michoacan"), ('MRO', "Morelos"),
-               ('NR', "Nayarit"), ('NLN', "Nuevo Leon"), ('OXC', "Oaxaca"), ('PUE', "Puebla"), ('QRT', "Queretaro"),
-               ('QTR', "Quintana Roo"), ('SNL', "San Luis Potosi"), ('SIN', "Sinaloa"), ('SONORA', "Sonora"),
-               ('TBC', "Tabasco"), ('TMP', "Tamaulipas"), ('TXL', "Tlaxcala"), ('VER', "Veracruz"), ('YCT', "Yucatan"),
-               ('ZAC', "Zacatecas")]
-    name = fields.Selection(estados, string="Entidad Federativa: ", required=True)
+    name = fields.Many2one('generales.estado', string="Entidad Federativa: ", required=True)
     municipio_delegacion = fields.Char(string="Municipio/Delegación: ", required=True)
     clave_municipio = fields.Integer(string="Clave municipio/Delegación: ", required=True)
 
@@ -55,15 +54,15 @@ class Parametros(models.Model):
 
     lema = fields.Text(string="Lema del Año:", required=True, default="2017: CENTENARIO DE LA CONSTITUCIÓN, PACTO "
                                                                       "SOCIAL SUPREMO DE LOS MEXICANOS")
-    iva = fields.Float(string="% IVA", required=True, default="16")
-    retencion = fields.Float(string="% Retención:", required=True, default="2")
+    iva = fields.Float(string="% IVA", required=True, default="0.16")
+    retencion = fields.Float(string="% Retención:", required=True, default="0.02")
     select = [('diario', 'DIARIO'), ('mensual', 'MENSUAL')]
     periodicidad_retencion = fields.Selection(select, string="Periodicidad Retención:", required=True,
                                               default="mensual")
-    sancion = fields.Float(string="% Sanción:", required=True, default="3")
+    sancion = fields.Float(string="% Sanción:", required=True, default="0.03")
     periodicidad_sancion = fields.Selection(select, string="Periodicidad Sanción:", default="mensual")
     # ver detalle en esta relacion
-    estado = fields.Many2one('generales.municipios', string="Estado:", required=True)
+    estado = fields.Many2one('generales.estado', string="Estado:", required=True)
 
     lugar_licitacion = fields.Text(string="Lugar Actos Licitación:", required=True, default="SALA DE JUNTAS")
 
@@ -80,7 +79,7 @@ class EvaluacionPuntos(models.Model):
 
     select = [('1', 'CALIDAD EN LA OBRA'), ('2', 'CAPACIDAD DEL LICITANTE'),
               ('3', 'EXPERIENCIA Y ESPECIALIDAD DEL LICITANTE'), ('4', 'PROPUESTA ECONÓMICA')]
-    name = fields.Selection(select, string="Rubro:", required=True, default="1")
+    name = fields.Selection(select, string="Rubro:", required=True, default="1", readonly=True)
     clave = fields.Char(string="Clave:", required=True)
     sub_rubro = fields.Char(string="SubRubro:", required=True)
     solicitado = fields.Text(string="Solicitado en:", required=True)
