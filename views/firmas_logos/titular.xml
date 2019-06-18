@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+<!--  Formulario de dependencia institucion      -->
+        <record id="firmas_logos_titular_view" model="ir.ui.view">
+            <field name="name">Titular Form</field>
+            <field name="model">firmas_logos.titular</field>
+            <field name="arch" type="xml">
+                <form string="titular form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="puesto"/>
+                            <field name="fecha_nombramiento"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--  vista tree      -->
+        <record id="firmas_logos_titular_tree_view" model="ir.ui.view">
+            <field name="name">Titular Tree</field>
+            <field name="model">firmas_logos.titular</field>
+            <field name="arch" type="xml">
+                <tree string="titular tree" >
+                    <field name="name"/>
+                    <field name="puesto"/>
+                    <field name="fecha_nombramiento"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--  action view      -->
+        <record id="action_firmas_logos_titular" model="ir.actions.act_window">
+            <field name="name">Titular</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">firmas_logos.titular</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Agregar nuevo titular
+              </p>
+            </field>
+        </record>
+        <menuitem id="firmas_logos_titular" parent="firmas_logos" name="Titular"
+                  action="action_firmas_logos_titular" sequence="1"/>
+  </data>
+</odoo>

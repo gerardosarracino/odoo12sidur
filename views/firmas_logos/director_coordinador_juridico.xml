@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+<!--  Formulario de director_coordinador_juridico   -->
+        <record id="firmas_logos_director_coordinador_juridico_view" model="ir.ui.view">
+            <field name="name">director coordinador juridico Form</field>
+            <field name="model">firmas_logos.director_coordinador_juridico</field>
+            <field name="arch" type="xml">
+                <form string="director coordinador juridico form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="puesto"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--  vista tree      -->
+        <record id="firmas_logos_director_coordinador_juridico_tree_view" model="ir.ui.view">
+            <field name="name">director coordinador juridicoo Tree</field>
+            <field name="model">firmas_logos.director_coordinador_juridico</field>
+            <field name="arch" type="xml">
+                <tree string="director coordinador juridico tree" >
+                    <field name="name"/>
+                    <field name="puesto"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--  action view      -->
+        <record id="action_firmas_logos_director_coordinador_juridico" model="ir.actions.act_window">
+            <field name="name">Director / Coordinador Jurídico</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">firmas_logos.director_coordinador_juridico</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Agregar Director / Coordinador Jurídico
+              </p>
+            </field>
+        </record>
+        <menuitem id="firmas_logos_director_coordinador_juridico" parent="firmas_logos"
+                  name="Director / Coordinador Jurídico"
+                  action="action_firmas_logos_director_coordinador_juridico" sequence="1"/>
+  </data>
+</odoo>

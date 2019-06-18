@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
   <data>
-        <!--  Formulario de Parámetros      -->
+         <!--  vista tree      -->
         <record id="generales_parametros_form_view" model="ir.ui.view">
             <field name="name">Generales Parametros Form</field>
             <field name="model">generales.parametros</field>
@@ -19,10 +19,12 @@
                             <field name="lugar_licitacion"/>
                         </group>
                     </sheet>
+                     <footer>
+                        <button string="Aceptar" name="create" type="object" class="btn-primary"/>
+                    </footer>
                 </form>
             </field>
         </record>
-
          <!--  vista tree      -->
         <record id="generales_parametros_tree_view" model="ir.ui.view">
             <field name="name">Generales Parametros Tree</field>

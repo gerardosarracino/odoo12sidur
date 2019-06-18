@@ -68,7 +68,7 @@ class DirectorCoordinadorJuridico(models.Model):
 
 
 class ResponsableSubdirectorObra(models.Model):
-    _name = 'firmas_logos.responsable_coordinador_obra'
+    _name = 'firmas_logos.responsable_subdirector_obra'
 
     name = fields.Char(string="Nombre:", required=True)
     puesto = fields.Char(string="Puesto:", required=True)

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields
+from odoo import models, fields, api, exceptions
 
 
 class OrigenesObra(models.Model):
@@ -61,7 +61,7 @@ class Parametros(models.Model):
                                               default="mensual")
     sancion = fields.Float(string="% Sanción:", required=True, default="0.03")
     periodicidad_sancion = fields.Selection(select, string="Periodicidad Sanción:", default="mensual")
-    # ver detalle en esta relacion
+
     estado = fields.Many2one('generales.estado', string="Estado:", required=True)
 
     lugar_licitacion = fields.Text(string="Lugar Actos Licitación:", required=True, default="SALA DE JUNTAS")

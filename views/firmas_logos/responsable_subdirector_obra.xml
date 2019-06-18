@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+<!--  Formulario de responsable_subdirector_obra   -->
+        <record id="firmas_logos_responsable_subdirector_obra_view" model="ir.ui.view">
+            <field name="name">responsable subdirector obra Form</field>
+            <field name="model">firmas_logos.responsable_subdirector_obra</field>
+            <field name="arch" type="xml">
+                <form string="responsable subdirector obra form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="puesto"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--  vista tree      -->
+        <record id="firmas_logos_responsable_subdirector_obra_tree_view" model="ir.ui.view">
+            <field name="name">responsable subdirector obrao Tree</field>
+            <field name="model">firmas_logos.responsable_subdirector_obra</field>
+            <field name="arch" type="xml">
+                <tree string="responsable subdirector obra tree" >
+                    <field name="name"/>
+                    <field name="puesto"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--  action view      -->
+        <record id="action_firmas_logos_responsable_subdirector_obra" model="ir.actions.act_window">
+            <field name="name">Responsable / Subdirector de Obra</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">firmas_logos.responsable_subdirector_obra</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Agregar Responsable / Subdirector de Obra
+              </p>
+            </field>
+        </record>
+        <menuitem id="firmas_logos_responsable_subdirector_obra" parent="firmas_logos"
+                  name="Responsable / Subdirector de Obra"
+                  action="action_firmas_logos_responsable_subdirector_obra" sequence="1"/>
+  </data>
+</odoo>
