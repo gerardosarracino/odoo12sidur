@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="dummy.xsl"?>
+<odoo>
+  <data>
+
+         <!--  Formulario de firmas logos      -->
+        <record id="firmas_logos_form_view" model="ir.ui.view">
+            <field name="name">Firmas Logos Form</field>
+            <field name="model">firmas_logos.firmas_logos</field>
+            <field name="arch" type="xml">
+                <form string="Firmas Logos form">
+                    <sheet>
+                    <hr/>
+                         <!--  MUNICIPIO??    -->
+                         <div class="oe.tittle">
+                            <div class="oe_edit_only">
+                                <label for="name" string="Municipio" />
+                            </div>
+                        </div>
+                        <group>
+                            <field name="municipio"/>
+                        </group>
+
+                        <hr/>
+
+                        <!--  DEPENDENCIA INSTITUCION     -->
+                        <div class="oe.tittle">
+                            <div class="oe_edit_only">
+                                <label for="name" string="Dependencia Institución" />
+                            </div>
+                        </div>
+                        <group>
+                            <field name="name"/>
+                            <field name="image" widget='image' class="oe_avatar"/>
+                            <field name="declaraciones_dependencia"/>
+                            <field name="titular"/>
+                            <field name="domicilio"/>
+                        </group>
+
+                    <hr/>
+
+                    <!--  TITULAR  -->
+                        <div class="oe.tittle">
+                            <div class="oe_edit_only">
+                                <label for="name" string="Titular" />
+                            </div>
+                        </div>
+                        <group>
+                            <field name="nombre_titular"/>
+                            <field name="puesto_titular"/>
+                            <field name="fecha_nombramiento_titular"/>
+                        </group>
+
+                    <hr/>
+
+                    <!--  CONTRALORIA INTERNA      -->
+                        <div class="oe.tittle">
+                            <div class="oe_edit_only">
+                                <label for="name" string="Contraloría Interna" />
+                            </div>
+                        </div>
+                        <group>
+                            <field name="nombre_contraloria"/>
+                            <field name="puesto_contraloria"/>
+                            <field name="fecha_nombramiento_contraloria"/>
+                        </group>
+
+                    <hr/>
+
+                        <!--  REPRESENTANTE CIUDADANO      -->
+                        <div class="oe.tittle">
+                            <div class="oe_edit_only">
+                                <label for="name" string="Representante Ciudadano" />
+                            </div>
+                        </div>
+                        <group>
+                            <field name="nombre_representante_ciudadano"/>
+                            <field name="puesto_representante_ciudadano"/>
+                        </group>
+
+                    <hr/>
+
+                        <!--  DIRECTOR / COORDINADOR ADMINISTRATIVO     -->
+                        <div class="oe.tittle">
+                            <div class="oe_edit_only">
+                                <label for="name" string="Director / Coordinador Administrativo" />
+                            </div>
+                        </div>
+                        <group>
+                            <field name="nombre_coordinador_administrativo"/>
+                            <field name="puesto_coordinador_administrativo"/>
+                        </group>
+
+                    <hr/>
+
+                        <!--  DIRECTOR / COORDINADOR PLANEACION      -->
+                        <div class="oe.tittle">
+                            <div class="oe_edit_only">
+                                <label for="name" string="Director / Coordinador de Planeación" />
+                            </div>
+                        </div>
+                        <group>
+                            <field name="nombre_coordinador_planeacion"/>
+                            <field name="puesto_coordinador_planeacion"/>
+                        </group>
+
+                    <hr/>
+
+                        <!--  DIRECTOR / COORDINADOR JURIDICO      -->
+                        <div class="oe.tittle">
+                            <div class="oe_edit_only">
+                                <label for="name" string="Director / Coordinador Jurídico" />
+                            </div>
+                        </div>
+                        <group>
+                            <field name="nombre_coordinador_juridico"/>
+                            <field name="puesto_coordinador_juridico"/>
+                        </group>
+
+                    <hr/>
+
+                        <!--  RESPONSABLE / SUBDIRECTOR DE OBRA     -->
+                        <div class="oe.tittle">
+                            <div class="oe_edit_only">
+                                <label for="name" string="Responsable / Subdirector de Obra" />
+                            </div>
+                        </div>
+                        <group>
+                            <field name="nombre_subdirector_obra"/>
+                            <field name="puesto_subdirector_obra"/>
+                        </group>
+
+                    <hr/>
+
+                        <!--  RESPONSABLE / LICITACION    -->
+                        <div class="oe.tittle">
+                            <div class="oe_edit_only">
+                                <label for="name" string="Responsable Licitaciones" />
+                            </div>
+                        </div>
+                        <group>
+                            <field name="nombre_responsable_licitacion"/>
+                            <field name="puesto_responsable_licitacion"/>
+                        </group>
+
+                    <hr/>
+
+                        <!--  FIRMAS DE CONTRATOS   -->
+                        <div class="oe.tittle">
+                            <div class="oe_edit_only">
+                                <label for="name" string="Firmas de contratos" />
+                            </div>
+                        </div>
+                        <group>
+                            <field name="nombre_testigo_uno"/>
+                            <field name="puesto_testigo_uno"/>
+                            <field name="nombre_testigo_dos"/>
+                            <field name="puesto_testigo_dos"/>
+                            <field name="nombre_testigo_tres"/>
+                            <field name="puesto_testigo_tres"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+ <!--  vista tree      -->
+        <record id="firmas_logos_tree_view" model="ir.ui.view">
+            <field name="name">Firmas logos Tree</field>
+            <field name="model">firmas_logos.firmas_logos</field>
+            <field name="arch" type="xml">
+                <tree string="firmas logos tree" >
+                    <field name="name"/>
+                    <field name="image" widget='image' class="oe_avatar"/>
+                    <field name="declaraciones_dependencia"/>
+                    <field name="titular"/>
+                    <field name="domicilio"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--  action view      -->
+        <record id="action_firmas_logos_firmas_logos" model="ir.actions.act_window">
+            <field name="name">Firmas/Logos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">firmas_logos.firmas_logos</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Insertar Datos
+              </p>
+            </field>
+        </record>
+      <menuitem id="firmas_logos_firmas_logos" parent="firmas_logos" name="Firmas/Logos"
+                  action="action_firmas_logos_firmas_logos" sequence="1"/>
+  </data>
+</odoo>

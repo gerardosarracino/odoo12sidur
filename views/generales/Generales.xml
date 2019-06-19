@@ -46,6 +46,7 @@
         <menuitem id="generales" name="Generales" sequence="1" parent="generales_root"/>
 
         <menuitem id="firmas_logos" name="Firmas/logos" sequence="2" parent="generales_root"/>
+        <menuitem id="contratista" name="Contratistas" sequence="3" parent="generales_root"/>
 
         <menuitem id="generales_origenes_obra" parent="generales" name="Origenes de obra"
                   action="action_generales_origenes_obra" sequence="1"/>

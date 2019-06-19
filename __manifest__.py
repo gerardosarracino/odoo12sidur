@@ -36,16 +36,8 @@
         'views/generales/apartados_proyecto.xml',
         'views/generales/etapas_pago.xml',
         'views/generales/estados.xml',
-        'views/firmas_logos/dependencia_institucion.xml',
-        'views/firmas_logos/titular.xml',
-        'views/firmas_logos/contraloria_interna.xml',
-        'views/firmas_logos/representante_ciudadano.xml',
-        'views/firmas_logos/director_coordinador_administrativo.xml',
-        'views/firmas_logos/director_coordinador_planeacion.xml',
-        'views/firmas_logos/director_coordinador_juridico.xml',
-        'views/firmas_logos/responsable_subdirector_obra.xml',
-        'views/firmas_logos/responsable_licitaciones.xml',
-        'views/firmas_logos/firmas_contratos.xml'
+        'views/firmas_logos/firmas_logos.xml',
+        'views/contratistas/datos.xml'
     ],
 
     'installable': True,

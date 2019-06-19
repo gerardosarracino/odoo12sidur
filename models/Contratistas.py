@@ -3,18 +3,13 @@
 from odoo import models, fields
 
 
-class TipoContratista(models.Model):
-    _name = 'contratista.tipo_contratista'
+class Datos(models.Model):
+    _name = 'contratista.datos'
 
+    name = fields.Char(string="Nombre/Razón social:")
     persona_moral = fields.Boolean(string="Persona Moral:", required=True)
     persona_fisica = fields.Boolean(string="Persona Física:", required=True)
     activo = fields.Boolean(string="Activo:", required=True)
-
-
-class Datos(models.Model):
-    _name = 'contratistas.datos'
-
-    name = fields.Char(string="Nombre/Razón social:")
     rfc = fields.Char(string="RFC:", required=True)
     select = [('mexicana', 'MEXICANA'), ('extranjera', 'EXTRANJERA')]
     nacionalidad = fields.Selection(select, string="Nacionalidad:", required=True)
