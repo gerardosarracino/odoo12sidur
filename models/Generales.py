@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api, exceptions
+from odoo import models, fields
 
 
 class OrigenesObra(models.Model):
@@ -79,7 +79,7 @@ class EvaluacionPuntos(models.Model):
 
     select = [('1', 'CALIDAD EN LA OBRA'), ('2', 'CAPACIDAD DEL LICITANTE'),
               ('3', 'EXPERIENCIA Y ESPECIALIDAD DEL LICITANTE'), ('4', 'PROPUESTA ECONÓMICA')]
-    name = fields.Selection(select, string="Rubro:", required=True, default="1", readonly=True)
+    name = fields.Selection(select, string="Rubro:", required=True, default="1")
     clave = fields.Char(string="Clave:", required=True)
     sub_rubro = fields.Char(string="SubRubro:", required=True)
     solicitado = fields.Text(string="Solicitado en:", required=True)

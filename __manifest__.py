@@ -24,20 +24,22 @@
 
     # always loaded
     'data': [
-        'security/ir.model.access.csv',
-        'views/generales/generales.xml',
-        'views/generales/tipo_obra.xml',
-        'views/generales/municipios.xml',
-        'views/generales/programas_inversion.xml',
-        'views/generales/modalidades.xml',
-        'views/generales/parametros.xml',
-        'views/generales/deducciones.xml',
-        'views/generales/evaluacion_puntos.xml',
-        'views/generales/apartados_proyecto.xml',
-        'views/generales/etapas_pago.xml',
-        'views/generales/estados.xml',
-        'views/firmas_logos/firmas_logos.xml',
-        'views/contratistas/contratista.xml'
+        'security/ir.model.access.csv', #Permisos de usuarios
+        'views/generales/generales.xml', #Vista de generales y origenes de obra
+        'views/generales/tipo_obra.xml', #Vista de tipos de obra pertenece a generales
+        'views/generales/municipios.xml', #Vista de municipios pertenece a generales
+        'views/generales/programas_inversion.xml', #Vista de programas de inversion pertenece a generales
+        'views/generales/modalidades.xml', #Vista de modalidades pertenece a generales
+        'views/generales/parametros.xml', #Vista de parametros pertenece a generales
+        'views/generales/deducciones.xml', #Vista de deducciones pertenece a generales
+        'views/generales/evaluacion_puntos.xml', #Vista de evaluacion de puntos pertenece a generales
+        'views/generales/apartados_proyecto.xml', #Vista de apartados de proyectos pertenece a generales
+        'views/generales/etapas_pago.xml', #Vista de etapas de pagos pertenece a generales
+        'views/generales/estados.xml', #Vista para agregar estados de la republica pertenece a generales
+        'views/firmas_logos/firmas_logos.xml', #Vista firmas/logos
+        'views/contratistas/contratista.xml', #Vista de contratistas
+        'views/plantillas/plantillas.xml', #Vista de plantillas
+        'views/control_expediente/control_expediente.xml' #Vista de control de expediente
     ],
 
     'installable': True,

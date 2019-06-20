@@ -4,7 +4,7 @@ from odoo import models, fields
 
 
 class Plantilla(models.Model):
-    _name = 'platillas.plantilla'
+    _name = 'plantillas.plantillas'
 
     select_documento = [('1', 'INVITACIONES'), ('2', 'BASES'), ('3', 'VISITA A LA OBRA'), ('4', 'JUNTA ACLARACIONES'),
                         ('5', 'APERTURA DE PROPUESTAS'), ('6', 'FALLO'), ('7', 'CONTRATOS'), ('8', 'CONVENIOS'),
@@ -19,17 +19,10 @@ class Plantilla(models.Model):
     # -----
     tipo_documento = fields.Selection(select_documento, string="Tipo de Documento:", required=True)
     normatividad = fields.Selection(select_normatividad, string="Normatividad:", required=True)
-    # Relacion teoricamente hecha y funcional ---tener en cuenta al probar
-    # programa = fields.Many2one(comodel_name="generales.programas_inversion", inverse_name="name", string="Programa:")
-    programa = fields.Selection(string="Programa:", required=True)
-    # - - - - -
+    programa = fields.Many2one(comodel_name="generales.programas_inversion", inverse_name="name", string="Programa:")
     periodo = fields.Selection(select_periodo, string="Periodo:", required=True)
     anticipo = fields.Selection(select_anticipo, string="Anticipo:", required=True)
     tipo_procedimiento = fields.Selection(select_tipo_procedimiento, string="Tipo de Procedimiento:", required=True)
+    subir_documento = fields.Binary(string="Subir Documento:")
+    nombre_documento = fields.Char(string="Nombre del Documento:")
 
-    # upload file en xml, <field name="subir_archivo" filename="nombre_archivo"/>
-    #                     <field name="nombre_archivo" invisible="1"/>
-    subir_archivo = fields.Binary(string="Subir Archivo:")
-    nombre_archivo = fields.Char(string="Nombre del Archivo:")
-
-    nombre_documento = fields.Char(string="Nombre de Documento:", required=True, )

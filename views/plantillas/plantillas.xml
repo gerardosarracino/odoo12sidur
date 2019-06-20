@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+     <!--  Formulario de PLantillas   -->
+        <record id="plantillas_plantillas_view" model="ir.ui.view">
+            <field name="name">plantillas plantillas form</field>
+            <field name="model">plantillas.plantillas</field>
+            <field name="arch" type="xml">
+                <form string="plantillas form">
+                    <sheet>
+                        <group>
+                            <field name="tipo_documento"/>
+                            <field name="normatividad"/>
+                            <field name="programa"/>
+                            <field name="periodo"/>
+                            <field name="anticipo"/>
+                            <field name="tipo_procedimiento"/>
+                            <field name="subir_documento" filename="nombre_documento"/>
+                            <field name="nombre_documento"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <!--  vista tree      -->
+        <record id="plantillas_plantillas_tree_view" model="ir.ui.view">
+            <field name="name">plantillas plantillas tree</field>
+            <field name="model">plantillas.plantillas</field>
+            <field name="arch" type="xml">
+                <tree string="plantillas tree">
+                    <field name="tipo_documento"/>
+                    <field name="normatividad"/>
+                    <field name="programa"/>
+                    <field name="periodo"/>
+                    <field name="anticipo"/>
+                    <field name="tipo_procedimiento"/>
+                    <field name="subir_documento" filename="nombre_documento"/>
+                    <field name="nombre_documento"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--  action view      -->
+        <record id="action_plantillas_plantillas" model="ir.actions.act_window">
+            <field name="name">Plantillas</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">plantillas.plantillas</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Agregar Plantillas
+              </p>
+            </field>
+        </record>
+        <menuitem id="plantillas_plantillas" parent="plantillas" name="Plantillas" action="action_plantillas_plantillas"
+                  sequence="1"/>
+  </data>
+</odoo>

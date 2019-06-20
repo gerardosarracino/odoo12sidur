@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
   <data>
-     <!--  Formulario de origenes de obra     -->
+     <!--  Formulario de origenes de obra  es el que se muestra al principio en la pestana 'generales'   -->
         <record id="generales_origenes_obra_form_view" model="ir.ui.view">
             <field name="name">Generales Origenes_obra Form</field>
             <field name="model">generales.origenes_obra</field>
@@ -47,6 +47,8 @@
 
         <menuitem id="firmas_logos" name="Firmas/logos" sequence="2" parent="generales_root"/>
         <menuitem id="contratista" name="Contratistas" sequence="3" parent="generales_root"/>
+        <menuitem id="plantillas" name="Plantillas" sequence="4" parent="generales_root"/>
+        <menuitem id="control_expediente" name="Control de Expediente" sequence="5" parent="generales_root"/>
 
         <menuitem id="generales_origenes_obra" parent="generales" name="Origenes de obra"
                   action="action_generales_origenes_obra" sequence="1"/>

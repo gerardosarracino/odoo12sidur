@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+     <!--  Formulario de control de expediente  -->
+        <record id="control_expediente_view" model="ir.ui.view">
+            <field name="name">control de expediente form</field>
+            <field name="model">control_expediente.control_expediente</field>
+            <field name="arch" type="xml">
+                <form string="control de expediente form">
+                    <sheet>
+                        <group>
+                            <field name="etapa"/>
+                            <field name="responsable"/>
+                            <field name="nombre"/>
+                            <field name="orden"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <!--  vista tree      -->
+        <record id="control_expediente_tree_view" model="ir.ui.view">
+            <field name="name">control de expediente tree</field>
+            <field name="model">control_expediente.control_expediente</field>
+            <field name="arch" type="xml">
+                <tree string="control de expediente tree">
+                    <field name="etapa"/>
+                    <field name="responsable"/>
+                    <field name="nombre"/>
+                    <field name="orden"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--  action view      -->
+        <record id="action_control_expediente" model="ir.actions.act_window">
+            <field name="name">Control de Expediente</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">control_expediente.control_expediente</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Agregar Control de Expedientes
+              </p>
+            </field>
+        </record>
+        <menuitem id="control_expediente_control_expediente" parent="control_expediente" name="Control de Expediente"
+                  action="action_control_expediente"
+                  sequence="1"/>
+  </data>
+</odoo>
