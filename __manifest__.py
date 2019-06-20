@@ -25,11 +25,11 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/generales/Generales.xml',
-        'views/generales/Tipo_obra.xml',
+        'views/generales/generales.xml',
+        'views/generales/tipo_obra.xml',
         'views/generales/municipios.xml',
         'views/generales/programas_inversion.xml',
-        'views/generales/Modalidades.xml',
+        'views/generales/modalidades.xml',
         'views/generales/parametros.xml',
         'views/generales/deducciones.xml',
         'views/generales/evaluacion_puntos.xml',
@@ -37,7 +37,7 @@
         'views/generales/etapas_pago.xml',
         'views/generales/estados.xml',
         'views/firmas_logos/firmas_logos.xml',
-        'views/contratistas/datos.xml'
+        'views/contratistas/contratista.xml'
     ],
 
     'installable': True,

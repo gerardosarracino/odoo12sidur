@@ -3,13 +3,14 @@
 from odoo import models, fields
 
 
-class Datos(models.Model):
-    _name = 'contratista.datos'
-
-    name = fields.Char(string="Nombre/Razón social:")
+class Contratista(models.Model):
+    _name = 'contratista.contratista'
+    # TIPO
     persona_moral = fields.Boolean(string="Persona Moral:", required=True)
     persona_fisica = fields.Boolean(string="Persona Física:", required=True)
     activo = fields.Boolean(string="Activo:", required=True)
+    # DATOS
+    name = fields.Char(string="Nombre/Razón social:", required=True)
     rfc = fields.Char(string="RFC:", required=True)
     select = [('mexicana', 'MEXICANA'), ('extranjera', 'EXTRANJERA')]
     nacionalidad = fields.Selection(select, string="Nacionalidad:", required=True)
@@ -29,18 +30,14 @@ class Datos(models.Model):
                ('ZAC', "Zacatecas")]
     estado_entidad = fields.Selection(estados, string="Estado/Entidad", required=True)
     telefono = fields.Char(string="Teléfonos:", required=True)
-    correo = fields.Char(string="Correo:", required=True)
-    registro_concursante = fields.Char(string="Registro de Concursante:", required=True)
-    objeto_social = fields.Text(string="Objeto Social:", required=True)
-
-
-class RepresentanteLegal(models.Model):
-    _name = 'contratista.representante_legal'
-
-    name = fields.Char(string="Nombre del Representante:", required=True)
+    correo = fields.Char(string="Correo:")
+    registro_concursante = fields.Char(string="Registro de Concursante:")
+    objeto_social = fields.Text(string="Objeto Social:")
+    # REPRESENTANTE LEGAL
+    nombre_representante = fields.Char(string="Nombre del Representante:", required=True)
     caracter = fields.Char(string="Carácter:", required=True)
-    acreditacion = fields.Text(string="Acreditación:", required=True)
-    documento_acredita_nacionalidad = fields.Char(string="Documento con el que acredita su Nacionalidad:", required=True)
-    rfc = fields.Char(string="RFC:", required=True)
+    acreditacion = fields.Text(string="Acreditación:")
+    documento_acredita_nacionalidad = fields.Char(string="Documento con el que acredita su Nacionalidad:")
+    rfc_representante_legal = fields.Char(string="RFC:", required=True)
     numero_indentificacion = fields.Char(string="Número de Identificación:", required=True)
     expedida_por = fields.Char(string="Expedida por:", required=True)

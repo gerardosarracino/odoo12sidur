@@ -11,7 +11,7 @@ access_generales_apartados_proyectos,generales.apartados_proyectos,model_general
 access_generales_etapas_pago,generales.etapas_pago,model_generales_etapas_pago,,1,1,1,1
 access_generales_estado,generales.estado,model_generales_estado,,1,1,1,1
 access_firmas_logos_firmas_logos,firmas_logos.firmas_logos,model_firmas_logos_firmas_logos,,1,1,1,1
-access_contratista_datos,contratista.datos,model_contratista_datos,,1,1,1,1
+access_contratista_contratista,contratista.contratista,model_contratista_contratista,,1,1,1,1
 
 
 

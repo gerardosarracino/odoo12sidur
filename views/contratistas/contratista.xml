@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+     <!--  Formulario de contratista   -->
+        <record id="contratista_contratista_view" model="ir.ui.view">
+            <field name="name">contratista contratista form</field>
+            <field name="model">contratista.contratista</field>
+            <field name="arch" type="xml">
+                <form string="contratista form">
+                    <sheet>
+                    <hr/>
+                        <!--  TIPO  -->
+                        <div class="oe.tittle">
+                            <div class="oe_edit_only">
+                                <label for="name" string="Tipo" />
+                            </div>
+                        </div>
+                        <group>
+                            <field name="persona_moral"/>
+                            <field name="persona_fisica"/>
+                            <field name="activo"/>
+                        </group>
+
+                    <hr/>
+
+                        <!--  DATOS   -->
+                        <div class="oe.tittle">
+                            <div class="oe_edit_only">
+                                <label for="name" string="Datos" />
+                            </div>
+                        </div>
+                        <group>
+                            <field name="name"/>
+                            <field name="rfc"/>
+                            <field name="nacionalidad"/>
+                            <field name="acreditacion_empresa"/>
+                            <field name="calles"/>
+                            <field name="numero"/>
+                            <field name="colonia"/>
+                            <field name="cp"/>
+                            <field name="municipio_delegacion"/>
+                            <field name="estado_entidad"/>
+                            <field name="telefono"/>
+                            <field name="correo"/>
+                            <field name="registro_concursante"/>
+                            <field name="objeto_social"/>
+                        </group>
+
+                    <hr/>
+
+                        <!--  REPRESENTANTE LEGAL   -->
+                        <div class="oe.tittle">
+                            <div class="oe_edit_only">
+                                <label for="name" string="Representante Legal" />
+                            </div>
+                        </div>
+                        <group>
+                            <field name="nombre_representante"/>
+                            <field name="caracter"/>
+                            <field name="acreditacion"/>
+                            <field name="documento_acredita_nacionalidad"/>
+                            <field name="rfc_representante_legal"/>
+                            <field name="numero_indentificacion"/>
+                            <field name="expedida_por"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <!--  vista tree      -->
+        <record id="contratista_contratista_tree_view" model="ir.ui.view">
+            <field name="name">contratista contratista tree</field>
+            <field name="model">contratista.contratista</field>
+            <field name="arch" type="xml">
+                <tree string="contratista tree">
+                        <field name="name"/>
+                        <field name="rfc"/>
+                        <field name="nombre_representante"/>
+                        <field name="telefono" string="Comunicacion"/>
+                </tree>
+            </field>
+
+        </record>
+        <!--  action view      -->
+        <record id="action_contratista_contratista" model="ir.actions.act_window">
+            <field name="name">Datos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">contratista.contratista</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Agregar Contratistas
+              </p>
+            </field>
+        </record>
+        <menuitem id="contratista_contratista" parent="contratista" name="Contratistas" action="action_contratista_contratista"
+                  sequence="1"/>
+  </data>
+</odoo>
