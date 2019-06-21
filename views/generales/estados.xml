@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
   <data>
-     <!--  Formulario de origenes de obra     -->
+     <!--  Formulario de estado    -->
         <record id="generales_estado_form_view" model="ir.ui.view">
             <field name="name">Generales estado Form</field>
             <field name="model">generales.estado</field>
@@ -29,7 +29,7 @@
 
         <!--  action view      -->
         <record id="action_generales_estado" model="ir.actions.act_window">
-            <field name="name">Orígenes de Obra</field>
+            <field name="name">Estados</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">generales.estado</field>
             <field name="view_mode">tree,form</field>

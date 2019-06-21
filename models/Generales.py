@@ -35,7 +35,7 @@ class Municipios(models.Model):
 class ProgramasInversion(models.Model):
     _name = 'generales.programas_inversion'
 
-    name = fields.Char(string="nombre", required=True)
+    name = fields.Char(string="Nombre:", required=True)
     clave = fields.Char(string="Clave:", required=True)
     select = [('federal', 'FEDERAL'), ('estatal', 'ESTATAL')]
     normatividad = fields.Selection(select, string="Normatividad:", required=True, default="federal")
