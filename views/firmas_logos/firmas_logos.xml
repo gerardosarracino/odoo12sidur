@@ -8,20 +8,9 @@
             <field name="name">Firmas Logos Form</field>
             <field name="model">firmas_logos.firmas_logos</field>
             <field name="arch" type="xml">
-                <form string="Firmas Logos form">
+                <form string="Firmas Logos form" >
                     <sheet>
-                    <hr/>
-                         <!--  MUNICIPIO??    -->
-                         <div class="oe.tittle">
-                            <div class="oe_edit_only">
-                                <label for="name" string="Municipio" />
-                            </div>
-                        </div>
-                        <group>
-                            <field name="municipio"/>
-                        </group>
 
-                        <hr/>
 
                         <!--  DEPENDENCIA INSTITUCION     -->
                         <div class="oe.tittle">
@@ -30,11 +19,8 @@
                             </div>
                         </div>
                         <group>
-                            <field name="name"/>
-                            <field name="image" widget='image' class="oe_avatar"/>
-                            <field name="declaraciones_dependencia"/>
-                            <field name="titular"/>
-                            <field name="domicilio"/>
+                            <field name="name" />
+
                         </group>
 
                     <hr/>
@@ -170,12 +156,16 @@
             <field name="name">Firmas logos Tree</field>
             <field name="model">firmas_logos.firmas_logos</field>
             <field name="arch" type="xml">
-                <tree string="firmas logos tree" >
-                    <field name="name"/>
-                    <field name="image" widget='image' class="oe_avatar"/>
-                    <field name="declaraciones_dependencia"/>
-                    <field name="titular"/>
-                    <field name="domicilio"/>
+                <tree string="firmas logos tree">
+                    <field name="name" string="Nombre de Dependencia" />
+                    <field name="nombre_titular" string="Nombre del Titular"/>
+                    <field name="nombre_contraloria" string="Nombre de Contraloria"/>
+                    <field name="nombre_representante_ciudadano" string="Representante Ciudadano"/>
+                    <field name="nombre_coordinador_administrativo" string="Coordinador administrativo"/>
+                    <field name="nombre_coordinador_planeacion" string="Coordinador Planeacion"/>
+                    <field name="nombre_coordinador_juridico" string="Coordinador juridico"/>
+                    <field name="nombre_subdirector_obra" string="Subdirector de Obra"/>
+                    <field name="nombre_responsable_licitacion" string="Reponsable Licitacion"/>
                 </tree>
             </field>
         </record>

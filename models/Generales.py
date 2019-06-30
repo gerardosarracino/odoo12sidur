@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields
+from odoo import models, fields, exceptions, api
 
 
 class OrigenesObra(models.Model):
@@ -51,6 +51,15 @@ class Modalidades(models.Model):
 
 class Parametros(models.Model):
     _name = 'generales.parametros'
+
+    @api.model
+    def create(self, values):
+        # res = super(FirmasLogos, self).create(values)
+        limit = len(self.search([]))
+        if limit >= 1:
+            raise exceptions.Warning('Ya se tienen datos creados')
+        else:
+            return super(Parametros, self).create(values)
 
     lema = fields.Text(string="Lema del Año:", required=True, default="2017: CENTENARIO DE LA CONSTITUCIÓN, PACTO "
                                                                       "SOCIAL SUPREMO DE LOS MEXICANOS")

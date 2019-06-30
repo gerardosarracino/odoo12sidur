@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+     <!--  Formulario de tipo_documento   -->
+        <record id="plantillas_tipo_documento_view" model="ir.ui.view">
+            <field name="name">plantillas tipo documento form</field>
+            <field name="model">plantillas.documento</field>
+            <field name="arch" type="xml">
+                <form string="tipo_documento form">
+                    <sheet>
+                        <group>
+                            <field name="documento" string="Tipo de Documento:"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <!--  vista tree      -->
+        <record id="plantillas_tipo_documento_tree_view" model="ir.ui.view">
+            <field name="name">tipo documento tree</field>
+            <field name="model">plantillas.documento</field>
+            <field name="arch" type="xml">
+                <tree string="tipo_documento tree">
+                    <field name="name"/>
+                    <field name="documento" string="Numero de registros:"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--  action view      -->
+        <record id="action_plantillas_tipo_documento" model="ir.actions.act_window">
+            <field name="name">Tipo de documento</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">plantillas.documento</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Agregar Tipo de documento
+              </p>
+            </field>
+        </record>
+        <menuitem id="plantillas_tipo_documento" parent="plantillas" name="Tipo de Documento"
+                  action="action_plantillas_tipo_documento"
+                  sequence="1"/>
+  </data>
+</odoo>

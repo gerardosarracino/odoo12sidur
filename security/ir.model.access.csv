@@ -13,6 +13,7 @@ access_generales_estado,generales.estado,model_generales_estado,,1,1,1,1
 access_firmas_logos_firmas_logos,firmas_logos.firmas_logos,model_firmas_logos_firmas_logos,,1,1,1,1
 access_contratista_contratista,contratista.contratista,model_contratista_contratista,,1,1,1,1
 access_plantillas_plantillas,plantillas.plantillas,model_plantillas_plantillas,,1,1,1,1
+access_plantillas_tipo_documento,plantillas.documento,model_plantillas_documento,,1,1,1,1
 access_control_expediente_control_expediente,control_expediente.control_expediente,model_control_expediente_control_expediente,,1,1,1,1
 
 

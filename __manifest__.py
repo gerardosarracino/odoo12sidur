@@ -39,6 +39,7 @@
         'views/firmas_logos/firmas_logos.xml', #Vista firmas/logos
         'views/contratistas/contratista.xml', #Vista de contratistas
         'views/plantillas/plantillas.xml', #Vista de plantillas
+        'views/plantillas/tipo_documento.xml', #Vista de plantillas
         'views/control_expediente/control_expediente.xml' #Vista de control de expediente
     ],
 
