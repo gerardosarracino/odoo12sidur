@@ -2,7 +2,6 @@
 
 
 from odoo import models, fields, api, exceptions
-import odoorpc
 
 
 class FirmasLogos(models.Model):

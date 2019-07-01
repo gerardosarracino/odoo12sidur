@@ -8,8 +8,14 @@
             <field name="arch" type="xml">
                 <form string="tipo_documento form">
                     <sheet>
-                        <group>
-                            <field name="documento" string="Tipo de Documento:"/>
+                        <div class="oe_title"><label for="name" class="oe_edit_only"/>
+                            <h1>
+                            <field name="name" placeholder="Tipo de Documento:" required="True"/>
+                            </h1>
+                        </div>
+                        <hr></hr>
+                        <group colspan="1" col="2">
+                            <field name="documento" string="Numero de Resgistros:"/>
                         </group>
                     </sheet>
                 </form>
@@ -23,7 +29,7 @@
             <field name="arch" type="xml">
                 <tree string="tipo_documento tree">
                     <field name="name"/>
-                    <field name="documento" string="Numero de registros:"/>
+                    <field name="documento" string="Numero de Registros:"/>
                 </tree>
             </field>
         </record>
@@ -36,12 +42,12 @@
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
               <p class="oe_view_nocontent_create">
-                Agregar Tipo de documento
+                Agregar Tipo de documentos
               </p>
             </field>
         </record>
         <menuitem id="plantillas_tipo_documento" parent="plantillas" name="Tipo de Documento"
                   action="action_plantillas_tipo_documento"
-                  sequence="1"/>
+                  sequence="2"/>
   </data>
 </odoo>

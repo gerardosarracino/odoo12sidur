@@ -11,7 +11,7 @@
                 <form string="plantillas form">
                     <sheet>
                         <group>
-                            <field name="tipo_documento" />
+                            <field name="tipo_documento" widget="many2one_tags"/>
                             <field name="normatividad"/>
                             <field name="programa"/>
                             <field name="periodo"/>
@@ -58,6 +58,6 @@
             </field>
         </record>
         <menuitem id="plantillas_plantillas" parent="plantillas" name="Plantillas" action="action_plantillas_plantillas"
-                  sequence="2"/>
+                  sequence="1"/>
   </data>
 </odoo>
